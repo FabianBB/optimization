@@ -3,7 +3,19 @@ import numpy as np
 import random
 import itertools
 
+# 1a)
+# the LP continuous relaxation would be as follows
+# MAX sum Pi * Xi for all i (profits * selection)
+# s.t. sum Wi * Xi <= C (weights * selection <= capacity)
+# Xi >= 0, Xi <= 1 (selection is relaxed from binary)
 
+# 1b)
+# in matrix form this is as follows:
+# MAX c^T * x s.t. Ax <= b, 0 <= x <= 1
+# where c = -p (profits)(because linprog minimizes)
+# A = w (weights)
+# b = C (capacity)
+# so A is just a single row vector and b is a single value
 def knapsack_LP(n, p, w, C):
     # max profits i.e. min neg profits
     c = -p  # linprog minimizes by default so * -1
