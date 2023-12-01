@@ -40,16 +40,17 @@ def knapsack_LP(n, p, w, C):
 
     return value, item_selection
 
+if __name__ == '__main__':
 
-n = 20
-# capacity
-C = 879
-# profits
-p = np.array([91, 72, 90, 46, 55, 8, 35, 75, 61, 15, 77, 40, 63, 75, 29, 75, 17, 78, 40, 44])
-# weights
-w = np.array([84, 83, 43, 4, 44, 6, 82, 92, 25, 83, 56, 18, 58, 14, 48, 70, 96, 32, 68, 92])
+    n = 20
+    # capacity
+    C = 879
+    # profits
+    p = np.array([91, 72, 90, 46, 55, 8, 35, 75, 61, 15, 77, 40, 63, 75, 29, 75, 17, 78, 40, 44])
+    # weights
+    w = np.array([84, 83, 43, 4, 44, 6, 82, 92, 25, 83, 56, 18, 58, 14, 48, 70, 96, 32, 68, 92])
 
-val, sol = knapsack_LP(n, p, w, C)
+    val, sol = knapsack_LP(n, p, w, C)
 
-print(f"Optimal value: {val}")
-print(f"Optimal solution: {sol}")
+    print(f"Optimal value: {val}")
+    print(f"Optimal solution: {sol}")
